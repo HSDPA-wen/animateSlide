@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
@@ -63,3 +64,75 @@ $ git checkout gh-pages
   </body>
 </html>
 
+=======
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>动画轮播</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<!--全屏轮播(图片广告)start-->
+<div id="index_menu_carousel" class="promo_wrapper">
+    <ol>
+        <li>
+            <div class="animate_one animate_img" date-img="images/temp/banner01-1.jpg"></div>
+            <div class="animate_two animate_img" date-img="images/temp/banner01-3.png"></div>
+            <a href="#" class="animate_three animate_img" date-img="images/temp/banner01-2.png" date-img6="images/temp/banner01.jpg"></a>
+        </li>
+        <li>
+            <div class="animate_one animate_img" date-img="images/temp/banner02-1.jpg"></div>
+            <div class="animate_two animate_img" date-img="images/temp/banner02-3.png"></div>
+            <a href="#" class="animate_three animate_img" date-img="images/temp/banner02-2.png" date-img6="images/temp/banner02.jpg"></a>
+        </li>
+        <li>
+            <div class="animate_one animate_img" date-img="images/temp/banner03-1.jpg"></div>
+            <div class="animate_two animate_img" date-img="images/temp/banner03-2.png"></div>
+            <a href="#" class="animate_three animate_img" date-img="images/temp/banner03-3.png" date-img6="images/temp/banner03.jpg"></a>
+        </li>
+    </ol>
+    <div class="promo_num">
+        <ul></ul>
+    </div>
+</div>
+<!--全屏轮播(图片广告)end-->
+<!--说明文档-->
+<div style="margin:50px 20px;padding:20px;background:#f2f2f2;line-height:24px;">
+
+    <h3 style="height:30px;line-height:30px;">每帧图片代码eg：</h3>
+    <pre style="margin:0;border:1px solid #333;padding:0 20px;">&lt;li&gt;
+    &lt;div class="animate_one animate_img" <span style="color:#f04040;">date-img</span>="images/temp/banner01-1.jpg"&gt;&lt;/div&gt;
+    &lt;div class="animate_two animate_img" <span style="color:#f04040;">date-img</span>="images/temp/banner01-3.png"&gt;&lt;/div&gt;
+    &lt;a href="#" class="animate_three animate_img" <span style="color:#f04040;">date-img</span>="images/temp/banner01-2.png" <span style="color:#04a4cc;">date-img6</span>="images/temp/banner01.jpg"&gt;&lt;/a&gt;
+&lt;/li&gt;</pre>
+    <p style="margin-top:5px;">每帧动画有3张图片，以date-img存图片地址，图片为png-24格式；</p>
+    <p>在ie6下面降级处理，只显示一张图片，没有动画效果，为图片全景，存入最后一个标签a的属性“date-img6”中；</p>
+    <h3 style="height:30px;margin-top:10px;line-height:30px;">js调用：</h3>
+    <pre style="margin:0;border:1px solid #333;padding:0 20px;">$("#index_menu_carousel").libAnimate({                        <span style="color:#f04040;">//box的class/id</span>
+	height:"300",				   	     <span style="color:#f04040;">//box的高度，图片的高度</span>
+	slideTimer:5,					     <span style="color:#f04040;">//自动轮播的速度</span>
+	animateSlide:[["top","fadeIn"],["fadeIn","top"],["left","right"]],
+        <span style="color:#f04040;">//动画进入的5种方式，从顶部、从底部、从左边、从右边、渐隐渐变，分别对应的名称top\bottom\left\right\fadeIn
+        //[["top","fadeIn"],["fadeIn","top"],["fadeIn","right"]] 分别对应3个轮播item的效果，
+        //每一帧轮播有3张图片，第一张默认是渐隐渐出，第二张是["top","fadeIn"]的第一个参数，第三张是["top","fadeIn"]的第二个参数
+        //有几帧动画就有几个["top","fadeIn"]参数</span>
+
+	callBack:function(me){} 		             <span style="color:#f04040;">//回调函数</span>
+ })</pre>
+    <h3 style="height:30px;margin-top:10px;line-height:30px;">注意事项：</h3>
+    <p>图片均为宽度为1920px，高度统一（默认为300px，可修改）的图片；</p>
+    <p>一共上传4张图片</p>
+
+</div>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/foundation-silde.js"></script>
+<script>
+    $("#index_menu_carousel").libAnimateSlide({
+        height:"300",
+        slideTimer:4,
+        animateSlide:[["top","fadeIn"],["fadeIn","top"],["left","right"]]
+    })
+</script>
+</body>
+</html>
+>>>>>>> origin/master
